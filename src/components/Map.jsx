@@ -55,7 +55,7 @@ function Map() {
 		<div className="relative">
 			<MapContainer
 				center={[7.872125, 123.068718]}
-				zoom={25}
+				zoom={16}
 				style={{ width: "100%", height: "100vh" }}>
 				<TileLayer
 					url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
@@ -107,7 +107,7 @@ function Map() {
 												Name: {item.name} <br />
 												Type: {item.type} <br />
 												<img
-													src={item.image_url || "https://images.unsplash.com/photo-1499856871958-5b9627545d1a"}
+													src={item.image || "https://images.unsplash.com/photo-1499856871958-5b9627545d1a"}
 													alt={item.name}
 													style={{ width: "100%", height: "auto", marginTop: "5px" }}
 												/>

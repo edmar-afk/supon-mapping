@@ -1,7 +1,6 @@
-import React, { useState } from "react";
-import { Modal, Box, Button, Typography, TextField } from "@mui/material";
-import api from "../assets/api";
+import React, { useState } from "react";import { Modal, Box, Button, Typography, TextField } from "@mui/material";import api from "../assets/api";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 const style = {
 	position: "absolute",
 	top: "50%",
@@ -37,24 +36,19 @@ function FeedBack() {
 
 	return (
 		<>
-			<Button
-				variant="contained"
-				color="secondary"
-				onClick={handleOpen}
-				sx={{
-					position: "fixed",
-					top: 16,
-					left: 54,
-					zIndex: 99999,
-				}}>
-				Send Feedback
-			</Button>
+			<div className="fixed top-4 left-14 z-[99999] flex flex-row items-stretch">
+				<button
+					onClick={handleOpen}
+					className="bg-orange-600 cursor-pointer hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded shadow">
+					Send Feedback
+				</button>
+				<Link to={'/login'} className="bg-orange-600 text-white px-6 py-1.5 ml-4">Login</Link>
+			</div>
 
 			<Modal
 				open={open}
 				onClose={handleClose}>
 				<Box sx={style}>
-					
 					<form onSubmit={handleSubmit}>
 						<TextField
 							fullWidth
