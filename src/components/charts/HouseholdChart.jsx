@@ -19,7 +19,7 @@ function HouseholdChart() {
 	return (
 		<>
 			<p className="text-center text-lg font-semibold my-12">
-				Household Members Around Brgy Matin-ao Bayog Zamboanga del Sur
+				Household Members Around Supon Zamboanga del Sur
 			</p>
 
 			<div className="space-y-10">
