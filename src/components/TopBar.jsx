@@ -60,14 +60,14 @@ function TopBar({ isVisible, onCategorySelect, activeCategory }) {
 
 	return (
 		<div
-			className={`bg-white px-12 py-6 border-t-6 border-orange-500 absolute flex flex-row items-center justify-start bottom-0 left-0 w-full flex-wrap z-[999] transition-transform duration-300 ${
+			className={`bg-white px-12 py-2 border-t-6 border-orange-500 absolute flex flex-row items-center justify-start bottom-0 left-0 w-full flex-wrap z-[999] transition-transform duration-300 ${
 				isVisible ? "scale-100" : "scale-0"
 			}`}>
 			{categories.map((cat) => (
 				<button
 					key={cat.key}
 					onClick={() => onCategorySelect(cat.key)}
-					className={`px-4 py-2 mx-2 rounded-lg flex items-center whitespace-nowrap duration-300 mb-3 ${
+					className={`px-4 mx-2 rounded-lg flex items-center whitespace-nowrap duration-300 mb-3 ${
 						activeCategory === cat.key ? "bg-gray-700 text-white" : "bg-white hover:bg-gray-700 hover:text-white"
 					}`}>
 					{cat.label}

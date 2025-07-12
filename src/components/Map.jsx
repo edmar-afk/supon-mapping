@@ -1,9 +1,4 @@
-import { useState } from "react";import { MapContainer, TileLayer, useMapEvents, Marker, Popup } from "react-leaflet";import "leaflet/dist/leaflet.css";import L from "leaflet";
-import api from "../assets/api";
-import Sidebar from "./Sidebar";
-import TopBar from "./TopBar";
-import FeedBack from "./FeedBack";
-
+import { useState } from "react";import { MapContainer, TileLayer, useMapEvents, Marker, Popup } from "react-leaflet";import "leaflet/dist/leaflet.css";import L from "leaflet";import api from "../assets/api";import Sidebar from "./Sidebar";import TopBar from "./TopBar";import FeedBack from "./FeedBack";
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
 	iconRetinaUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png",
@@ -100,7 +95,9 @@ function Map() {
 											<>
 												Name: {item.people} <br />
 												Age: {item.age} <br />
-												Gender: {item.gender}
+												Gender: {item.gender} <br />
+												Source of Income: {item.source_income} <br />
+												Disability Type: {item.disability_type} <br />
 											</>
 										) : activeCategory === "infras" ? (
 											<>

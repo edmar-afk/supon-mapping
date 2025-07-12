@@ -1,7 +1,4 @@
-import React, { useEffect, useState } from "react";import api from "../assets/api";import AddPwd from "../components/admin/AddPwd";
-import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
-
-function Pwd() {
+import React, { useEffect, useState } from "react";import api from "../assets/api";import AddPwd from "../components/admin/AddPwd";import DeleteForeverIcon from "@mui/icons-material/DeleteForever";function Pwd() {
 	const [pwds, setPwds] = useState([]);
 
 	const fetchPwds = async () => {
@@ -62,6 +59,16 @@ function Pwd() {
 								<th
 									scope="col"
 									className="px-6 py-3">
+									Disability Status
+								</th>
+								<th
+									scope="col"
+									className="px-6 py-3">
+									Source of Income
+								</th>
+								<th
+									scope="col"
+									className="px-6 py-3">
 									Action
 								</th>
 							</tr>
@@ -79,6 +86,8 @@ function Pwd() {
 										</th>
 										<td className="px-6 py-4">{pwd.age}</td>
 										<td className="px-6 py-4">{pwd.gender}</td>
+										<td className="px-6 py-4">{pwd.disability_type}</td>
+										<td className="px-6 py-4">{pwd.source_income}</td>
 										<td className="px-6 py-4">
 											<button
 												type="button"
