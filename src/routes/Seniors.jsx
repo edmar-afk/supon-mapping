@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from "react";import api from "../assets/api";
-import AddSeniors from "../components/admin/AddSeniors";
-import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
+import React, { useEffect, useState } from "react";import api from "../assets/api";import AddSeniors from "../components/admin/AddSeniors";import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 
 function Seniors() {
 	const [seniors, setSeniors] = useState([]);
@@ -63,6 +61,11 @@ function Seniors() {
 								<th
 									scope="col"
 									className="px-6 py-3">
+									Purok
+								</th>
+								<th
+									scope="col"
+									className="px-6 py-3">
 									Action
 								</th>
 							</tr>
@@ -80,6 +83,7 @@ function Seniors() {
 										</th>
 										<td className="px-6 py-4">{senior.age}</td>
 										<td className="px-6 py-4">{senior.gender}</td>
+										<td className="px-6 py-4">{senior.purok}</td>
 										<td className="px-6 py-4">
 											<button
 												type="button"

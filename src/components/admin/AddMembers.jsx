@@ -1,5 +1,4 @@
-import React, { useState } from "react";import { Modal } from "@mui/material";
-import api from "../../assets/api";
+import React, { useState } from "react";import { Modal } from "@mui/material";import api from "../../assets/api";
 
 const style = {
 	display: "flex",
@@ -15,6 +14,7 @@ function AddMembers() {
 		age: "",
 		role: "",
 		household: "",
+		purok: "",
 	});
 	const [error, setError] = useState("");
 
@@ -33,7 +33,7 @@ function AddMembers() {
 	};
 
 	const handleClose = () => {
-		setFormData({ name: "", age: "", role: "", household: "" });
+		setFormData({ name: "", age: "", role: "", household: "", purok: "" });
 		setError("");
 		setOpen(false);
 	};
@@ -101,6 +101,7 @@ function AddMembers() {
 										className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-orange-600 focus:border-orange-600 block w-full p-2.5"
 									/>
 								</div>
+
 								<div>
 									<label
 										htmlFor="age"
@@ -118,6 +119,7 @@ function AddMembers() {
 										className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-orange-600 focus:border-orange-600 block w-full p-2.5"
 									/>
 								</div>
+
 								<div>
 									<label
 										htmlFor="role"
@@ -142,6 +144,7 @@ function AddMembers() {
 										<option value="Daughter">Daughter</option>
 									</select>
 								</div>
+
 								<div>
 									<label
 										htmlFor="household"
@@ -169,6 +172,25 @@ function AddMembers() {
 										))}
 									</select>
 								</div>
+
+								<div>
+									<label
+										htmlFor="purok"
+										className="block mb-2 text-sm font-medium text-gray-900">
+										Purok
+									</label>
+									<input
+										type="text"
+										name="purok"
+										id="purok"
+										value={formData.purok}
+										onChange={handleChange}
+										placeholder="Purok"
+										required
+										className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-orange-600 focus:border-orange-600 block w-full p-2.5"
+									/>
+								</div>
+
 								{error && <p className="text-sm text-red-500 mt-2">{error}</p>}
 								<button
 									type="submit"
@@ -183,5 +205,6 @@ function AddMembers() {
 		</>
 	);
 }
+
 
 export default AddMembers;

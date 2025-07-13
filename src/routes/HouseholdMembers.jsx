@@ -1,6 +1,4 @@
-import { useEffect, useState } from "react";import api from "../assets/api";
-import AddMembers from "../components/admin/AddMembers";
-
+import { useEffect, useState } from "react";import api from "../assets/api";import AddMembers from "../components/admin/AddMembers";
 function HouseholdMembers() {
 	const [households, setHouseholds] = useState([]);
 
@@ -55,19 +53,25 @@ function HouseholdMembers() {
 									className="px-6 py-3">
 									Role
 								</th>
+								<th
+									scope="col"
+									className="px-6 py-3">
+									Purok
+								</th>
 							</tr>
 						</thead>
 						<tbody>
 							{households.length > 0 ? (
 								households.flatMap((household) =>
-									household.members.map((member, idx) => (
+									household.members.map((member) => (
 										<tr
 											key={member.id}
 											className="odd:bg-orange-200 even:bg-gray-50 border-b border-orange-200">
-											<td className="px-6 py-4">{idx === 0 ? household.family_name : ""}</td>
+											<td className="px-6 py-4">{household.family_name}</td>
 											<td className="px-6 py-4">{member.name}</td>
 											<td className="px-6 py-4">{member.age}</td>
 											<td className="px-6 py-4">{member.role}</td>
+											<td className="px-6 py-4">{member.purok}</td>
 										</tr>
 									))
 								)
